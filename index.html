@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Bootstrap Modal</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<style type="text/css">
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - (#{$modal-dialog-margin} * 2));
+
+  // Ensure `modal-dialog-centered` extends the full height of the view (IE10/11)
+  &::before {
+    display: block; // IE10
+    height: calc(100vh - (#{$modal-dialog-margin} * 2));
+    content: "";
+  }
+}
+
+/* _modal.scss:161 */
+.modal-dialog-centered {
+  min-height: calc(100% - (#{$modal-dialog-margin-y-sm-up} * 2));
+
+  &::before {
+    height: calc(100vh - (#{$modal-dialog-margin-y-sm-up} * 2));
+  }
+
+}
+.modal-body {
+    height: 229px;
+    padding: 54px;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.bold_text {
+    font-weight: bold;
+    font-size: medium;
+    font-style: normal;
+    padding-bottom: 26px;
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    transform: translate(-50%, -50%);
+}
+.container{
+    position:relative;
+    width:300px;          /* this is an example */
+    height:300px;         /* this is an example */
+    overflow:hidden;
+}
+
+#background {
+    left:-15px;
+    right:-15px;
+    top:-15px;
+    bottom:-15px;
+    /* other styles */
+}
+.topBar-Text {
+
+    margin-left: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<h2>Bootstrap Modal</h2>
+	<!-- .Launch Modal Button-->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mymodal">
+		Launch Modal
+	</button>
+
+	<!-- .modal -->
+	<div class="modal fade" id="Mymodal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						×
+					</button>
+					<div style="float: right;font-size: 11px;font-family: math;margin-right: 20px;">
+						<b>CURR Diagnostic</b>  
+						</br>
+						<b>test pack</b>
+						<img src="CURR_lab_test.JPG" class="pull-right img-responsive" width="40" height="41"></img></div>
+					                                                             
+				</div> 
+				
+				<div class="modal-body">
+					<div class=" bold_text" > Are you an Individual or an Institution? </div>
+						<div class="center">
+							<input type="radio" id="individual" name="category" value="individual">
+							<label for="individual">Individual</label><br>
+							<input type="radio" id="institution" name="category" value="institution">
+							<label for="institution">Institution</label><br>
+						</div>
+				</div>   
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Next
+					</button>                                 
+				</div>
+			</div>                                                                       
+		</div>                                      
+	</div>
+</div>
+</body>
+</html>              
